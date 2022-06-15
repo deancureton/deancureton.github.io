@@ -35,7 +35,7 @@ html {
 body {
 	margin: 0;
 	background: var(--main-bg-color);
-	font-size: calc(var(--main-spacing) / 3.5);
+	font-size: clamp(15px, 2vw, calc(var(--main-spacing) / 3.5));
 }
 html, body {
 	max-width: 100%;
@@ -256,7 +256,7 @@ button.fa:active {
 }
 #email input, #email textarea {
 	font-family: Inter;
-	font-size: 16px;
+	font-size: calc(var(--main-spacing) / 3.5 * 0.8);
 	padding: 10px 12px 10px 12px;
 	outline: none;
 	background: var(--main-bg-color);
@@ -266,7 +266,7 @@ button.fa:active {
 	line-height: 150%;
 	transition: background 0.3s, border 0.3s;
 	resize: vertical;
-	min-height: 24px;
+	min-height: calc(var(--main-spacing) / 3.5 * 0.8 * 1.5);
 	max-height: 150px;
 }
 #email input:hover, #email textarea:hover {
