@@ -112,7 +112,6 @@ nav li {
 	height: 100%;
 	display: flex;
 	align-items: center;
-	transition: background 0.3s;
 	padding-left: calc(var(--main-spacing) / 4);
 	padding-right: calc(var(--main-spacing) / 4);
 }
