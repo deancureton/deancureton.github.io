@@ -450,6 +450,30 @@ button.fa:active {
 		content: "📅";
 	}
 }
+@media only screen and (any-pointer: fine) {
+	a::before, a::after {
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		top: 100%;
+		left: 0;
+		background: var(--main-link-color);
+	}
+	a::before {
+		content: "";
+		transform-origin: 100% 50%;
+		transform: scale3d(0, 1, 1);
+		transition: transform 0.3s, background 0.1s, height 0.1s;
+	}
+	a:hover::before {
+		transform-origin: 0% 50%;
+		transform: scale3d(1, 1, 1);
+	}
+	a:active::before {
+		background: var(--main-link-active-color);
+		height: 2px;
+	}
+}
 #trackers {
 	display: flex;
 	justify-content: center;
@@ -479,4 +503,12 @@ button.fa:active {
 #profile, #schedule {
 	background: var(--main-bg-color);
 	z-index: 1;
+}
+@media screen and (prefers-reduced-motion: reduce) {  
+  * {
+    /* Very short durations means JavaScript that relies on events still works */
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
