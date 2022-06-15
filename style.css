@@ -108,6 +108,8 @@ main > * {
 }
 #spacer {
 	height: 52px;
+	padding: 0;
+	width: 100%;
 }
 @keyframes rotate {
 	from {
