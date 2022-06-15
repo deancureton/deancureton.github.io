@@ -25,6 +25,9 @@
 	--main-highlight-color: #1363DF;
 	--main-spacing: 70px;
 }
+* {
+	overscroll-behavior: none;
+}
 html {
 	font-family: Inter, sans-serif;
 	color: var(--main-text-color);
@@ -39,7 +42,6 @@ body {
 }
 html, body {
 	max-width: 100%;
-	overscroll-behavior: none;
 }
 .currentPage {
 	color: var(--main-link-highlight-color);

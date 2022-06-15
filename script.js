@@ -40,16 +40,14 @@ function navHighlight() {
 		document.getElementById("navList").children[document.getElementById("navList").children.length - 1].children[0].classList.remove("currentPage");
 	}
 }
-window.onload = function() {
+window.addEventListener("DOMContentLoaded", function() {
 	navHighlight();
 	document.addEventListener("scroll", navHighlight);
-	setTimeout(function() {
 	for (var i = 0; i < document.getElementsByClassName("carouselHidden").length; i++) {
 		document.getElementsByClassName("carouselHidden")[i].style.animationDuration = "0.5s";
 	}
 	document.getElementsByClassName("carouselVisible")[0].style.animationDuration = "0.5s";
-	}, 500);
-}
+});
 function moveCarousel(dir) {
 	carouselPage += dir + document.getElementById("carouselC").children.length;
 	carouselPage %= document.getElementById("carouselC").children.length;
