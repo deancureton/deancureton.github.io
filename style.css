@@ -53,6 +53,7 @@ a {
 a:active {
 	color: var(--main-link-active-color);
 }
+/*
 a::before, a::after {
 	position: absolute;
 	width: 100%;
@@ -74,7 +75,7 @@ a:hover::before {
 a:active::before {
 	background: var(--main-link-active-color);
 	height: 2px;
-}
+}*/
 header {
 	position: fixed;
 	z-index: 1000;
