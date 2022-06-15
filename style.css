@@ -55,6 +55,11 @@ a:active {
 }
 a::before, a::after {
 	height: 0;
+	background: rgba(0, 0, 0, 0);
+}
+a:active::before {
+	height: 0;
+	background: rgba(0, 0, 0, 0);
 }
 /*
 a::before, a::after {
