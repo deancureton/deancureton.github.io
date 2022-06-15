@@ -274,6 +274,7 @@ button.fa:active {
 	transition: background 0.1s;
 	height: 39.5px;
 	font-weight: normal;
+	-webkit-appearance:none;
 	border-radius: 5px;
 }
 #email input[type=submit]:hover {
