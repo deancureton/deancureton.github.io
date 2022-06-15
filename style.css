@@ -114,6 +114,7 @@ nav li {
 	align-items: center;
 	padding-left: calc(var(--main-spacing) / 4);
 	padding-right: calc(var(--main-spacing) / 4);
+	transition: background 0s;
 }
 nav li:active {
 	background: var(--main-bg-color);
