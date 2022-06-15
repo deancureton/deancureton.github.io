@@ -21,21 +21,28 @@ function carouselChange() {
 		}
 	}
 }
-function windowBlur() {
+function navHighlight() {
 	for (var i = 0; i < document.getElementsByTagName("main")[0].children.length; i++) {
 		var rect = document.getElementsByTagName("main")[0].children[i].getBoundingClientRect();
-		if ((rect.top + rect.bottom)/2 > 52 && (rect.top + rect.bottom)/2 < window.innerHeight) {
-			document.getElementsByTagName("main")[0].children[i].classList.add("unblurred");
-			document.getElementsByTagName("main")[0].children[i].classList.remove("blurred");
+		if (window.innerHeight/2 > rect.top && window.innerHeight/2 < rect.bottom) {
+			document.getElementById("navList").children[i].children[0].classList.add("currentPage");
 		} else {
-			document.getElementsByTagName("main")[0].children[i].classList.add("blurred");
-			document.getElementsByTagName("main")[0].children[i].classList.remove("unblurred");
+			document.getElementById("navList").children[i].children[0].classList.remove("currentPage");
 		}
+	}
+	var rect = document.getElementsByTagName("footer")[0].getBoundingClientRect();
+	if (window.scrollY + window.innerHeight + 50 > document.body.scrollHeight || (window.innerHeight/2 > rect.top && window.innerHeight/2 < rect.bottom)) {
+		for (var i = 0; i < document.getElementsByTagName("main")[0].children.length; i++) {
+			document.getElementById("navList").children[i].children[0].classList.remove("currentPage");
+		}
+		document.getElementById("navList").children[document.getElementById("navList").children.length - 1].children[0].classList.add("currentPage");
+	} else {
+		document.getElementById("navList").children[document.getElementById("navList").children.length - 1].children[0].classList.remove("currentPage");
 	}
 }
 window.onload = function() {
-	windowBlur();
-	document.addEventListener("scroll", windowBlur);
+	navHighlight();
+	document.addEventListener("scroll", navHighlight);
 	setTimeout(function() {
 	for (var i = 0; i < document.getElementsByClassName("carouselHidden").length; i++) {
 		document.getElementsByClassName("carouselHidden")[i].style.animationDuration = "0.5s";
