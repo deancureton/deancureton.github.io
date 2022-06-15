@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>Dean Cureton</title>
+		<link rel="stylesheet" href="style.css" />
+		<meta charset="UTF-8">
+		<script src="script.js"></script>
+		<script src="https://kit.fontawesome.com/c9703e16dd.js" crossorigin="anonymous"></script>
+		<!-- add meta tags -->
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="#about">About Me</a></li>
+					<li><a href="#expertise">Expertise</a></li>
+					<li><a href="#schedule">Schedule</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="spacer"></section>
+		<main id="about">
+			<section id="profile" class="double">
+				<div id="pfpcontainer">
+					<img src="profile.png" id="pfp" />
+					<div id="pfpshadow"></div>
+				</div>
+				<div class="desc">
+					<h1 class="heading" id="helloH">Hello, I'm Dean Cureton!</h1>
+					<p>I'm a student who will be attending Stanford University in the fall after having graduated from The Westminster Schools. I hope to share my love of STEM subjects to younger kids and help make it fun again!</p>
+				</div>
+			</section>
+			<div id="expertise">
+				<aside id="carouselL" onclick="moveCarousel(-1);"><i class="fa-solid fa-angle-left"></i></aside>
+				<div id="carouselM" onclick="moveCarousel(1);">
+					<div id="carouselBG">
+						<img src="backgrounds/bg1.jpg" style="opacity: 100%" />
+						<img src="backgrounds/bg2.jpg" style="opacity: 0" />
+						<img src="backgrounds/bg3.jpg" style="opacity: 0" />
+					</div>
+					<div id="carouselC">
+						<section class="double carouselVisible">
+							<div class="desc">
+								<h1 class="heading" id="mathH">Mathematics</h1>
+								<p>One thing I've always disliked about middle and high school math curriculums is their strict adherence to formulaic problem solving methods. Although math is undoubtedly a precise and formula-based field of study, problem solving is an art and one that is largely lost through traditional math education methods. During my studies of advanced math at a young age, I was able to apply intuition and clever problem solving tricks that aren't taught in schools to complete work faster and keep math fun. Through tutoring, I hope to introduce younger kids to problem solving methods that save precious time and keep math from being the dry, formulaic subject that it is.</p>
+							</div>
+						</section>
+						<section class="double carouselHidden">
+							<div class="desc">
+								<h1 class="heading" id="compsciH">Computer Programming</h1>
+								<p>My love for computer science grew from the all too common childhood love of video games. Driven by a curiosity of how games are made, I began coding in rudimentary programming languages and creating incredibly simple games, and the satisfaction and fun of bringing my own video game idea to fruition fueled my passion even more. After having studied computer science for about ten years, I would love to be able to introduce curious young children to the world of programming and game development so that they, too, can find their own passion for the invaluable technological skills that are driving the future.</p>
+							</div>
+						</section>
+						<section class="double carouselHidden">
+							<div class="desc">
+								<h1 class="heading" id="scienceH">Science</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque non leo commodo porta. Suspendisse potenti. Ut vehicula tellus nunc, vel commodo ligula condimentum ac. Curabitur non elit semper, aliquam diam vel, pellentesque quam. Proin lacus ligula, aliquam non turpis molestie, aliquet porttitor eros. Ut pretium magna sit amet nulla molestie venenatis. In vel purus sit amet lectus elementum elementum. Vivamus gravida tempus neque. Nullam aliquet ultricies placerat. Etiam eu aliquam risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec maximus mollis mauris eu efficitur.</p>
+							</div>
+						</section>
+					</div>
+					<div id="trackers">
+						<span class="tracker activeTracker" onclick="jumpCarousel(0);"></span>
+						<span class="tracker" onclick="jumpCarousel(1)"></span>
+						<span class="tracker" onclick="jumpCarousel(2)"></span>
+					</div>
+				</div>
+				<aside id="carouselR" onclick="moveCarousel(1);"><i class="fa-solid fa-angle-right"></i></aside>
+			</div>
+			<section id="schedule" class="double">
+				<div class="desc">
+					<h1 class="heading" id="scheduleH">Schedule</h1>
+					<p>I use Calendly to schedule any tutoring appointments. Please use the attached window to book a session with me. Alternatively, click <a href="https://calendly.com/deancureton" target="_blank">here</a>.</p>
+				</div>
+				<!-- Calendly inline widget begin
+				<div class="calendly-inline-widget" data-url="https://calendly.com/deancureton?background_color=262522&text_color=f4f4f4&primary_color=1363df" style="min-width:320px;height:630px;"></div>
+				<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+				Calendly inline widget end -->
+				<iframe src="https://calendly.com/deancureton?embed_domain=&amp;embed_type=Inline&amp;background_color=262522&amp;text_color=f4f4f4&amp;primary_color=1363df" frameborder="0" id="calendlyFrame"></iframe>
+			</section>
+		</main>
+		<footer>
+			<section id="contact">
+				<section id="socials">
+					<p>Connect with me</p>
+					<ul>
+						<li><a href="http://instagram.com/dean.cureton" target="_blank"><button class="fa fa-instagram"></button></a></li>
+						<li><a href="http://linkedin.com/in/deancureton" target="_blank"><button class="fa fa-linkedin"></button></a></li>
+						<!--<li><button class="fa fa-brands fa-youtube"></button></li>-->
+						<li><a href="http://github.com/deancureton" target="_blank"><button class="fa fa-github"></button></a></li>
+					</ul>
+				</section>
+				<section id="email">
+					<p>Send me an email</p>
+					<form action="mailto:deancureton73@gmail.com" method="GET" name="emailform">
+						<input type="text" name="subject" placeholder="Subject" />
+						<textarea name="body" rows="6" cols="20" placeholder="Message" spellcheck="false"></textarea>
+						<input type="submit" value="Send" />
+					</form>
+				</section>
+			</section>
+			<p>Made by Dean Cureton</p>
+		</footer>
+	</body>
+</html>
