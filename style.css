@@ -386,10 +386,10 @@ button.fa:active {
 	grid-column: 1;
 }
 .carouselHidden {
-	animation: 0s 1 forwards carouselHide;
+	animation: 0.5s 1 forwards carouselHide;
 }
 .carouselVisible {
-	animation: 0s 1 forwards carouselShow;
+	animation: 0.5s 1 forwards carouselShow;
 }
 @keyframes carouselHide {
 	from {

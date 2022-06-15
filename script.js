@@ -43,10 +43,6 @@ function navHighlight() {
 window.addEventListener("DOMContentLoaded", function() {
 	navHighlight();
 	document.addEventListener("scroll", navHighlight);
-	for (var i = 0; i < document.getElementsByClassName("carouselHidden").length; i++) {
-		document.getElementsByClassName("carouselHidden")[i].style.animationDuration = "0.5s";
-	}
-	document.getElementsByClassName("carouselVisible")[0].style.animationDuration = "0.5s";
 });
 function moveCarousel(dir) {
 	carouselPage += dir + document.getElementById("carouselC").children.length;
