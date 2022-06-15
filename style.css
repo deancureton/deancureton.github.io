@@ -53,6 +53,9 @@ a {
 a:active {
 	color: var(--main-link-active-color);
 }
+a::before, a::after {
+	height: 0;
+}
 /*
 a::before, a::after {
 	position: absolute;
