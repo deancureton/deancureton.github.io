@@ -247,6 +247,7 @@ button.fa:active {
 }
 #email input, #email textarea {
 	font-family: Inter;
+	font-size: 13px;
 	padding: 10px 12px 10px 12px;
 	outline: none;
 	background: var(--main-bg-color);
@@ -256,7 +257,7 @@ button.fa:active {
 	line-height: 150%;
 	transition: background 0.3s, border 0.3s;
 	resize: vertical;
-	min-height: 42px;
+	min-height: 19.5px;
 	max-height: 150px;
 }
 #email input:hover, #email textarea:hover {
@@ -271,6 +272,7 @@ button.fa:active {
 	border: none;
 	outline: revert;
 	transition: background 0.1s;
+	height: 39.5px;
 }
 #email input[type=submit]:hover {
 	cursor: pointer;
