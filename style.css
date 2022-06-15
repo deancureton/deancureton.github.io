@@ -102,11 +102,22 @@ nav ul {
 	justify-content: center;
 	/*padding-left: 30px;*/
 	padding-left: 0;
-	gap: calc(var(--main-spacing) / 2);
+	gap: 0;
 	width: 100%;
 	height: var(--main-spacing);
 	list-style: none;
 	margin: 0;
+}
+nav li {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	transition: background 0.3s;
+	padding-left: calc(var(--main-spacing) / 4);
+	padding-right: calc(var(--main-spacing) / 4);
+}
+nav li:active {
+	background: var(--main-bg-color);
 }
 main {
 	position: relative;
@@ -484,6 +495,9 @@ button.fa:active {
 	a:active::before {
 		background: var(--main-link-active-color);
 		height: 2px;
+	}
+	nav li:active {
+		background: rgba(0, 0, 0, 0);
 	}
 }
 #trackers {
