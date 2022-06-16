@@ -648,7 +648,7 @@ button.fa:active {
 		justify-content: flex-start;
 		height: auto;
 	}
-	
+
 	nav a {
 		padding-left: var(--main-spacing);
 	}
@@ -712,7 +712,8 @@ button.fa:active {
 		width: 0;
 	}
 
-	nav li::before, nav li::after {
+	nav li::before,
+	nav li::after {
 		position: absolute;
 		width: 100%;
 		height: 1px;
