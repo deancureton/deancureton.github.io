@@ -3,12 +3,12 @@
 // TODO Make intro page more exciting
 // TODO Arrow buttons
 // TODO Tap icon on carousel
-// TODO Variable font size
+// TODO Add extra content for doubles (right align expertise?)
+// TODO Fix clip path
 var carouselPage = 0;
 function carouselChange() {
 	for (var i = 0; i < document.getElementById("carouselC").children.length; i++) {
 		if (i === carouselPage) {
-			console.log(i);
 			document.getElementById("carouselC").children[i].classList.add("carouselVisible");
 			document.getElementById("carouselC").children[i].classList.remove("carouselHidden");
 			document.getElementById("trackers").children[i].classList.add("activeTracker");
