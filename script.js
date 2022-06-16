@@ -85,7 +85,7 @@ function hamburgerMenu(checked) {
 		document.getElementById("background").style.zIndex = "900";
 
 	} else {
-		document.getElementsByTagName("header")[0].style.left = "-300px";
+		document.getElementsByTagName("header")[0].style.left = "-310px";
 
 		document.getElementById("patty2").style.opacity = 1;
 
