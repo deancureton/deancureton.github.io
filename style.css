@@ -24,6 +24,7 @@
 	--main-link-highlight-color: #C2E6FF;
 	--main-highlight-color: #1363DF;
 	--main-spacing: 70px;
+	--min-font-size: 15px;
 }
 * {
 	overscroll-behavior: none;
@@ -38,10 +39,11 @@ html {
 body {
 	margin: 0;
 	background: var(--main-bg-color);
-	font-size: clamp(15px, 2vw, calc(var(--main-spacing) / 3.5));
+	font-size: clamp(var(--min-font-size), 2vw, calc(var(--main-spacing) / 3.5));
 }
 html, body {
 	max-width: 100%;
+	overflow-x: hidden;
 }
 .currentPage {
 	color: var(--main-link-highlight-color);
@@ -194,6 +196,7 @@ main > * {
 	font-optical-sizing: auto;
 	margin-top: 0;
 	display: inline-block;
+	word-wrap: break-word;
 }
 .heading::before {
 	display: inline-block;
@@ -221,6 +224,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow-x: hidden;
 }
 .desc {
 	max-width: 800px;
@@ -230,6 +234,7 @@ footer {
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 0 50px;
+	padding: 0;
 }
 #socials ul {
 	list-style: none;
@@ -279,8 +284,8 @@ button.fa:active {
 }
 #email input, #email textarea {
 	font-family: Inter;
-	font-size: calc(var(--main-spacing) / 3.5 * 0.8);
-	padding: 10px 12px 10px 12px;
+	font-size: clamp(calc(var(--min-font-size) * 0.8), calc(2vw * 0.8), calc(var(--main-spacing) / 3.5 * 0.8));
+	padding: clamp(calc(var(--min-font-size) * 0.6), calc(2vw * 0.6), calc(var(--main-spacing) / 3.5 * 0.6));
 	outline: none;
 	background: var(--main-bg-color);
 	border: 1px solid var(--main-bg-color);
@@ -289,7 +294,7 @@ button.fa:active {
 	line-height: 150%;
 	transition: background 0.3s, border 0.3s;
 	resize: vertical;
-	min-height: calc(var(--main-spacing) / 3.5 * 0.8 * 1.5);
+	min-height: calc(attr(font-size) * 1.5);
 	max-height: 150px;
 }
 #email input:hover, #email textarea:hover {
@@ -304,7 +309,7 @@ button.fa:active {
 	border: none;
 	outline: revert;
 	transition: background 0.1s;
-	height: 46px;
+	height: calc(attr(font-size) * 1.5);
 	font-weight: normal;
 	-webkit-appearance:none;
 	border-radius: 5px;
@@ -342,6 +347,9 @@ button.fa:active {
 	background: rgba(255, 255, 255, 0.2);
 	cursor: pointer;
 }
+#expertise aside:active {
+	background: rgba(255, 255, 255, 0.4);
+}
 #carouselL {
 	left: 0;
 }
@@ -363,8 +371,6 @@ button.fa:active {
 	filter: blur(10px) brightness(0.4);
 }
 #carouselM {
-	flex-grow: 1;
-	flex-shrink: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -381,10 +387,12 @@ button.fa:active {
 	align-items: center;*/
 	display: grid;
 	margin-bottom: 50px;
+	max-width: 100vw;
 }
 #carouselC section {
 	grid-row: 1;
 	grid-column: 1;
+	max-width: calc(100vw - 104px);
 }
 .carouselHidden {
 	animation: 0.5s 1 forwards carouselHide;
@@ -424,6 +432,7 @@ button.fa:active {
 	#carouselR {
 		left: 0;
 		opacity: 0;
+		width: 0;
 	}
 	/*#expertise:hover #carouselL {
 		left: 0;
