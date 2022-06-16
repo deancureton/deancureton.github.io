@@ -360,6 +360,7 @@ button.fa:active {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	clip-path: inset(0);
 }
 #carouselBG img {
 	position: fixed;

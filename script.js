@@ -21,7 +21,7 @@ function carouselChange() {
 		}
 	}
 }
-function navHighlight() {
+function handleScroll() {
 	for (var i = 0; i < document.getElementsByTagName("main")[0].children.length; i++) {
 		var rect = document.getElementsByTagName("main")[0].children[i].getBoundingClientRect();
 		if (window.innerHeight/2 > rect.top && window.innerHeight/2 < rect.bottom) {
@@ -41,8 +41,8 @@ function navHighlight() {
 	}
 }
 window.addEventListener("DOMContentLoaded", function() {
-	navHighlight();
-	document.addEventListener("scroll", navHighlight);
+	handleScroll();
+	document.addEventListener("scroll", handleScroll);
 });
 function moveCarousel(dir) {
 	carouselPage += dir + document.getElementById("carouselC").children.length;
