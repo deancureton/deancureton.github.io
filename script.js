@@ -74,7 +74,7 @@ function jumpCarousel(pos) {
 }
 function hamburgerMenu(checked) {
 	if (checked) {
-		document.getElementsByTagName("header")[0].style.left = 0;
+		document.getElementsByTagName("header")[0].style.transform = "translateX(0)";
 
 		document.getElementById("patty2").style.opacity = 0;
 
@@ -85,7 +85,7 @@ function hamburgerMenu(checked) {
 		document.getElementById("background").style.zIndex = "900";
 
 	} else {
-		document.getElementsByTagName("header")[0].style.left = "-310px";
+		document.getElementsByTagName("header")[0].style.transform = "translateX(-310px)";
 
 		document.getElementById("patty2").style.opacity = 1;
 

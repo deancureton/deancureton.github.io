@@ -127,6 +127,7 @@ header {
 	height: var(--main-spacing);
 	background: var(--main-bg-highlight-color);
 	box-shadow: -25px -25px 20px 17px #000000;
+	transform: translateX(0);
 }
 
 #hamburgerBG {
@@ -634,8 +635,8 @@ button.fa:active {
 	header {
 		width: 300px;
 		height: 100%;
-		left: -310px;
-		transition: left 0.5s;
+		transform: translateX(-310px);
+		transition: transform 0.5s;
 	}
 
 	nav {
