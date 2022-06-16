@@ -74,6 +74,8 @@ function jumpCarousel(pos) {
 }
 function hamburgerMenu(checked) {
 	if (checked) {
+		document.getElementsByTagName("header")[0].style.left = 0;
+
 		document.getElementById("patty2").style.opacity = 0;
 
 		document.getElementById("patty1").style.transform = "rotate(45deg)";
@@ -82,8 +84,9 @@ function hamburgerMenu(checked) {
 		document.getElementById("background").style.background = "rgba(0, 0, 0, 0.7)";
 		document.getElementById("background").style.zIndex = "900";
 
-		document.getElementsByTagName("header")[0].style.left = 0;
 	} else {
+		document.getElementsByTagName("header")[0].style.left = "-300px";
+
 		document.getElementById("patty2").style.opacity = 1;
 
 		document.getElementById("patty1").style.transform = "rotate(0deg)";
@@ -91,7 +94,6 @@ function hamburgerMenu(checked) {
 
 		document.getElementById("background").style.background = "rgba(0, 0, 0, 0)";
 
-		document.getElementsByTagName("header")[0].style.left = "-300px";
 
 		setTimeout(function () {
 			document.getElementById("background").style.zIndex = "-1000";
