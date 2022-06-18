@@ -406,7 +406,7 @@ button.fa:active {
 	align-items: center;
 }
 
-#email form {
+#email div {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -414,7 +414,8 @@ button.fa:active {
 }
 
 #email input,
-#email textarea {
+#email textarea,
+#email button {
 	font-family: Inter;
 	font-size: clamp(calc(var(--min-font-size) * 0.8), calc(2vw * 0.8), calc(var(--main-spacing) / 3.5 * 0.8));
 	padding: clamp(calc(var(--min-font-size) * 0.6), calc(2vw * 0.6), calc(var(--main-spacing) / 3.5 * 0.6));
@@ -441,23 +442,22 @@ button.fa:active {
 	border: 1px solid var(--main-text-color);
 }
 
-#email input[type=submit] {
+#email button {
 	background: var(--main-highlight-color);
 	border: none;
 	outline: revert;
 	transition: background 0.1s;
 	height: calc(attr(font-size) * 1.5);
 	font-weight: normal;
-	-webkit-appearance: none;
 	border-radius: 5px;
 }
 
-#email input[type=submit]:hover {
+#email button:hover {
 	cursor: pointer;
 	background: #2D8CEF;
 }
 
-#email input[type=submit]:active {
+#email button:active {
 	background: var(--main-link-active-color);
 }
 

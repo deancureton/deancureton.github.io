@@ -1,10 +1,6 @@
-// TODO Nav menu when mobile
-// TODO Auto slideshow when inactive
 // TODO Make intro page more exciting
-// TODO Arrow buttons
 // TODO Tap icon on carousel
 // TODO Add extra content for doubles (right align expertise?)
-// TODO Fix clip path
 var carouselPage = 0;
 function carouselChange() {
 	for (var i = 0; i < document.getElementById("carouselC").children.length; i++) {
@@ -20,6 +16,16 @@ function carouselChange() {
 			document.getElementById("carouselBG").children[i].style.opacity = 0;
 		}
 	}
+}
+var carouselTime = 8;
+var timer;
+function carouselTimer() {
+	if (timer <= 0) {
+		moveCarousel(1);
+	} else {
+		timer--;
+	}
+	setTimeout(carouselTimer, 1000);
 }
 function handleScroll() {
 	for (var i = 0; i < document.getElementsByTagName("main")[0].children.length; i++) {
@@ -43,6 +49,18 @@ function handleScroll() {
 window.addEventListener("DOMContentLoaded", function () {
 	handleScroll();
 	document.addEventListener("scroll", handleScroll);
+	document.addEventListener("keydown", function(e) {
+		e = e || window.event;
+		if (e.key == "ArrowLeft") {
+			moveCarousel(-1);
+		}
+		if (e.key == "ArrowRight") {
+			moveCarousel(1);
+		}
+	});
+	timer = carouselTime;
+	carouselTimer();
+	carouselChange();
 	for (var i = 0; i < document.getElementById("navList").children.length; i++) {
 		document.getElementById("navList").children[i].addEventListener("click", function () {
 			if (window.innerWidth <= 700) {
@@ -61,12 +79,15 @@ window.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 });
+var timer = 0;
 function moveCarousel(dir) {
+	timer = carouselTime;
 	carouselPage += dir + document.getElementById("carouselC").children.length;
 	carouselPage %= document.getElementById("carouselC").children.length;
 	carouselChange();
 }
 function jumpCarousel(pos) {
+	timer = carouselTime;
 	carouselPage = pos - 1;
 	carouselPage += dir + document.getElementById("carouselC").children.length;
 	carouselPage %= document.getElementById("carouselC").children.length;
@@ -99,4 +120,7 @@ function hamburgerMenu(checked) {
 			document.getElementById("background").style.zIndex = "-1000";
 		}, 500);
 	}
+}
+function sendEmail() {
+	window.open("mailto:deancureton73@gmail.com?subject=" + encodeURIComponent(document.getElementById("emailSubject").value) + "&body=" + encodeURIComponent(document.getElementById("emailMessage").value), "_blank");
 }
