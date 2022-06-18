@@ -49,7 +49,7 @@ function handleScroll() {
 window.addEventListener("DOMContentLoaded", function () {
 	handleScroll();
 	document.addEventListener("scroll", handleScroll);
-	document.addEventListener("keydown", function(e) {
+	document.addEventListener("keydown", function (e) {
 		e = e || window.event;
 		if (e.key == "ArrowLeft") {
 			moveCarousel(-1);
