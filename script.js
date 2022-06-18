@@ -1,6 +1,5 @@
 // TODO Make intro page more exciting
 // TODO Tap icon on carousel
-// TODO Add extra content for doubles (right align expertise?)
 var carouselPage = 0;
 function carouselChange() {
 	for (var i = 0; i < document.getElementById("carouselC").children.length; i++) {
@@ -28,7 +27,7 @@ function carouselTimer() {
 	setTimeout(carouselTimer, 1000);
 }
 function handleScroll() {
-	for (var i = 0; i < document.getElementsByTagName("main")[0].children.length; i++) {
+	for (var i = 0; i < document.getElementsByTagName("main")[0].children.length - 1; i++) {
 		var rect = document.getElementsByTagName("main")[0].children[i].getBoundingClientRect();
 		if (window.innerHeight / 2 > rect.top && window.innerHeight / 2 < rect.bottom) {
 			document.getElementById("navList").children[i].children[0].classList.add("currentPage");
@@ -38,12 +37,16 @@ function handleScroll() {
 	}
 	var rect = document.getElementsByTagName("footer")[0].getBoundingClientRect();
 	if (window.scrollY + window.innerHeight + 50 > document.body.scrollHeight || (window.innerHeight / 2 > rect.top && window.innerHeight / 2 < rect.bottom)) {
-		for (var i = 0; i < document.getElementsByTagName("main")[0].children.length; i++) {
+		for (var i = 0; i < document.getElementsByTagName("main")[0].children.length - 1; i++) {
 			document.getElementById("navList").children[i].children[0].classList.remove("currentPage");
 		}
 		document.getElementById("navList").children[document.getElementById("navList").children.length - 1].children[0].classList.add("currentPage");
+		document.getElementById("arrow").classList.add("fa-arrow-up");
+		document.getElementById("arrow").classList.remove("fa-arrow-down");
 	} else {
 		document.getElementById("navList").children[document.getElementById("navList").children.length - 1].children[0].classList.remove("currentPage");
+		document.getElementById("arrow").classList.add("fa-arrow-down");
+		document.getElementById("arrow").classList.remove("fa-arrow-up");
 	}
 }
 window.addEventListener("DOMContentLoaded", function () {
@@ -71,12 +74,13 @@ window.addEventListener("DOMContentLoaded", function () {
 	}
 	window.addEventListener("resize", function () {
 		if (this.window.innerWidth > 700) {
-			document.getElementsByTagName("header")[0].style.left = 0;
+			document.getElementsByTagName("header")[0].style.transform = "translateX(0)";
 			document.getElementById("background").style.zIndex = "-1000";
 		} else {
 			document.getElementById("hamburgerCheck").checked = false;
 			hamburgerMenu(false);
 		}
+		handleScroll();
 	});
 });
 var timer = 0;
@@ -123,4 +127,22 @@ function hamburgerMenu(checked) {
 }
 function sendEmail() {
 	window.open("mailto:deancureton73@gmail.com?subject=" + encodeURIComponent(document.getElementById("emailSubject").value) + "&body=" + encodeURIComponent(document.getElementById("emailMessage").value), "_blank");
+}
+function arrowButtonClick() {
+	var rect = document.getElementsByTagName("footer")[0].getBoundingClientRect();
+	if (window.scrollY + window.innerHeight + 50 > document.body.scrollHeight || (window.innerHeight / 2 > rect.top && window.innerHeight / 2 < rect.bottom)) {
+		window.location.href = "#about";
+	} else {
+		for (var i = 0; i < document.getElementsByTagName("main")[0].children.length - 1; i++) {
+			var rect = document.getElementsByTagName("main")[0].children[i].getBoundingClientRect();
+			if (window.innerHeight / 2 > rect.top && window.innerHeight / 2 < rect.bottom) {
+				if (i != document.getElementsByTagName("main")[0].children.length - 2) {
+				window.location.href = "#" + document.getElementsByTagName("main")[0].children[i + 1].id;
+				} else {
+					window.location.href = "#contact";
+				}
+				break;
+			}
+		}
+	}
 }

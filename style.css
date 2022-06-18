@@ -54,7 +54,6 @@ body {
 html,
 body {
 	max-width: 100%;
-	overflow-x: hidden;
 }
 
 #background {
@@ -225,9 +224,9 @@ nav a:active {
 main {
 	position: relative;
 	height: auto;
-	display: flex;
+	/*display: flex;
 	flex-direction: column;
-	align-items: stretch;
+	align-items: stretch;*/
 }
 
 section {
@@ -236,7 +235,7 @@ section {
 	height: auto;
 }
 
-main>* {
+main>section, main>div {
 	min-height: calc(100vh - (var(--main-spacing) * 3));
 	transition: filter 0.5s;
 	padding-top: var(--main-spacing);
@@ -347,6 +346,7 @@ footer {
 
 .desc {
 	max-width: 800px;
+	min-width: 250px;
 }
 
 #contact {
@@ -461,7 +461,7 @@ button.fa:active {
 	background: var(--main-link-active-color);
 }
 
-#expertise {
+#courses {
 	height: 100%;
 	position: relative;
 	/*display: flex;
@@ -473,7 +473,7 @@ button.fa:active {
 	overflow-x: hidden;
 }
 
-#expertise aside {
+#courses aside {
 	font-size: 5em;
 	width: 100px;
 	position: relative;
@@ -486,12 +486,12 @@ button.fa:active {
 	z-index: 1;
 }
 
-#expertise aside:hover {
+#courses aside:hover {
 	background: rgba(255, 255, 255, 0.2);
 	cursor: pointer;
 }
 
-#expertise aside:active {
+#courses aside:active {
 	background: rgba(255, 255, 255, 0.4);
 }
 
@@ -595,15 +595,15 @@ button.fa:active {
 		width: 0;
 	}
 
-	/*#expertise:hover #carouselL {
+	/*#courses:hover #carouselL {
 		left: 0;
 		opacity: 100%;
 	}
-	#expertise:hover #carouselR {
+	#courses:hover #carouselR {
 		left: -100px;
 		opacity: 100%;
 	}*/
-	#expertise {
+	#courses {
 		grid-template-columns: 0 1fr 0;
 	}
 }
@@ -744,6 +744,9 @@ button.fa:active {
 	nav li:active {
 		background: rgba(0, 0, 0, 0);
 	}
+	nav a:active {
+		background: rgba(0, 0, 0, 0);
+	}
 }
 
 #trackers {
@@ -773,15 +776,19 @@ button.fa:active {
 	width: 50%;
 	height: 50%;
 	min-width: 300px;
-	min-height: 436px;
+	min-height: 334px;
 	max-width: 649px;
-	max-height: 436px;
+	max-height: 334px;
 }
 
 #profile,
 #schedule {
 	background: var(--main-bg-color);
 	z-index: 1;
+}
+
+#schedule {
+	flex-wrap: wrap-reverse;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -791,4 +798,25 @@ button.fa:active {
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.001ms !important;
 	}
+}
+
+#arrowButton {
+	display: block;
+	position: sticky;
+	width: 200px;
+	height: 75px;
+	bottom: 50px;
+	margin: 0 auto 50px auto;
+	align-self: flex-start;
+	padding: 0;
+	background: rgba(255, 255, 255, 0.1);
+	border: 3px solid rgba(255, 255, 255, 0.4);
+	transition: background 0.3s;
+	font-size: 20px;
+	color: white;
+}
+
+#arrowButton:hover {
+	background: rgba(255, 255, 255, 0.2);
+	cursor: pointer;
 }

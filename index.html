@@ -28,8 +28,8 @@
 				<a href="#about">
 					<li>About Me</li>
 				</a>
-				<a href="#expertise">
-					<li>Expertise</li>
+				<a href="#courses">
+					<li>Courses</li>
 				</a>
 				<a href="#schedule">
 					<li>Schedule</li>
@@ -59,7 +59,7 @@
 					turpis.</p>
 			</div>
 		</section>
-		<div id="expertise">
+		<div id="courses">
 			<aside id="carouselL" onclick="moveCarousel(-1);"><i class="fa-solid fa-angle-left"></i></aside>
 			<div id="carouselM" onclick="moveCarousel(1);">
 				<div id="carouselBG">
@@ -81,6 +81,13 @@
 								Suspendisse purus est, feugiat sed dolor ac, elementum congue quam. Mauris in fringilla
 								turpis.</p>
 						</div>
+						<div class="desc">
+							<h2>Courses offered:</h2>
+							<ul>
+								<li>Summer Brush-Up</li>
+								<li>Intuition Workshop</li>
+							</ul>
+						</div>
 					</section>
 					<section class="double carouselHidden">
 						<div class="desc">
@@ -94,6 +101,16 @@
 								sapien ut, porta risus. Duis ac accumsan purus. Praesent volutpat finibus congue.
 								Suspendisse purus est, feugiat sed dolor ac, elementum congue quam. Mauris in fringilla
 								turpis.</p>
+						</div>
+						<div class="desc">
+							<h2>Courses offered:</h2>
+							<ul>
+								<li>Summer Brush-Up</li>
+								<li>Video Game Development</li>
+								<li>Web Design</li>
+								<li>Java Crash Course</li>
+								<li>Python Crash Course</li>
+							</ul>
 						</div>
 					</section>
 					<section class="double carouselHidden">
@@ -109,6 +126,13 @@
 								Suspendisse purus est, feugiat sed dolor ac, elementum congue quam. Mauris in fringilla
 								turpis.</p>
 						</div>
+						<div class="desc">
+							<h2>Courses offered:</h2>
+							<ul>
+								<li>Summer Brush-Up</li>
+								<li>Physics and Calculus</li>
+							</ul>
+						</div>
 					</section>
 				</div>
 				<div id="trackers">
@@ -120,6 +144,9 @@
 			<aside id="carouselR" onclick="moveCarousel(1);"><i class="fa-solid fa-angle-right"></i></aside>
 		</div>
 		<section id="schedule" class="double">
+			<iframe
+				src="https://calendly.com/deancureton?embed_domain=&amp;embed_type=Inline&amp;background_color=262522&amp;text_color=f4f4f4&amp;primary_color=1363df"
+				frameborder="0" id="calendlyFrame"></iframe>
 			<div class="desc">
 				<h1 class="heading" id="scheduleH">Schedule</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque non leo commodo
@@ -130,10 +157,10 @@
 					placerat. Etiam eu aliquam risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
 					posuere cubilia curae; Donec maximus mollis mauris eu efficitur.</p>
 			</div>
-			<iframe
-				src="https://calendly.com/deancureton?embed_domain=&amp;embed_type=Inline&amp;background_color=262522&amp;text_color=f4f4f4&amp;primary_color=1363df"
-				frameborder="0" id="calendlyFrame"></iframe>
 		</section>
+		<button id="arrowButton" onclick="arrowButtonClick();">
+			<i id="arrow" class="fa-solid"></i>
+		</button>
 	</main>
 	<footer>
 		<section id="contact">
