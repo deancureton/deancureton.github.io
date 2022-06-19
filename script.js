@@ -26,6 +26,22 @@ function carouselTimer() {
 	}
 	setTimeout(carouselTimer, 1000);
 }
+function bgImageSize() {
+	var ratio = window.innerWidth / window.innerHeight;
+	if (ratio < 1000/650) {
+		// Width is too small, height needs to shrink
+		document.querySelectorAll("#carouselBG img").forEach(function(item) {
+			item.style.height = window.innerHeight + "px";
+			item.style.width = (window.innerHeight * 1000/650) + "px";
+		});
+	} else {
+		// Height is too small, width needs to shrink
+		document.querySelectorAll("#carouselBG img").forEach(function(item) {
+			item.style.width = window.innerWidth + "px";
+			item.style.height = (window.innerWidth * 650/1000) + "px";
+		});
+	}
+}
 function handleScroll() {
 	for (var i = 0; i < document.getElementsByTagName("main")[0].children.length - 1; i++) {
 		var rect = document.getElementsByTagName("main")[0].children[i].getBoundingClientRect();
@@ -81,7 +97,9 @@ window.addEventListener("DOMContentLoaded", function () {
 			hamburgerMenu(false);
 		}
 		handleScroll();
+		bgImageSize();
 	});
+	bgImageSize();
 });
 var timer = 0;
 function moveCarousel(dir) {

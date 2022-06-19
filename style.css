@@ -819,4 +819,5 @@ button.fa:active {
 #arrowButton:hover {
 	background: rgba(255, 255, 255, 0.2);
 	cursor: pointer;
+	z-index: 10000;
 }
