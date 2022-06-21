@@ -1,5 +1,6 @@
 // TODO Make intro page more exciting
 // TODO Tap icon on carousel
+// TODO pop up window for each course? Notion style
 var carouselPage = 0;
 function carouselChange() {
 	for (var i = 0; i < document.getElementById("carouselC").children.length; i++) {

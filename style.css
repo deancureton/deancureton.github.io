@@ -657,7 +657,7 @@ button.fa:active {
 }
 
 @media only screen and (min-width: 1000px) {
-	#helloH::before {
+	/*#helloH::before {
 		content: "👋";
 		transform-origin: 55% 65%;
 		animation: 0.3s ease-in-out infinite alternate rotate;
@@ -677,7 +677,7 @@ button.fa:active {
 
 	#scheduleH::before {
 		content: "📅";
-	}
+	}*/
 }
 
 @media only screen and (any-pointer: fine) {
