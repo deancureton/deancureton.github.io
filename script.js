@@ -53,8 +53,9 @@ function handleScroll() {
 		}
 	}*/
 	for (var i = 0; i < document.getElementById("navList").children.length - 1; i++) {
-		var rect = document.getElementsByTagName("main")[0].children[i].getBoundingClientRect();
-		if (window.innerHeight / 2 > rect.top) {
+		console.log(document.getElementById("navList").children[i].getAttribute("href").slice(0, -1));
+		var rect = document.getElementById(document.getElementById("navList").children[i].getAttribute("href").slice(1)).getBoundingClientRect();
+		if (100 > rect.top) {
 			document.getElementById("navList").children[i].children[0].classList.add("currentPage");
 			for (var j = 0; j < i; j++) {
 				document.getElementById("navList").children[j].children[0].classList.remove("currentPage");
