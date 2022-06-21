@@ -1,7 +1,7 @@
 // TODO Make intro page more exciting
 // TODO Tap icon on carousel
 // TODO pop up window for each course? Notion style
-var carouselPage = 0;
+/*var carouselPage = 0;
 function carouselChange() {
 	for (var i = 0; i < document.getElementById("carouselC").children.length; i++) {
 		if (i === carouselPage) {
@@ -42,34 +42,48 @@ function bgImageSize() {
 			item.style.height = (window.innerWidth * 650/1000) + "px";
 		});
 	}
-}
+}*/
 function handleScroll() {
-	for (var i = 0; i < document.getElementsByTagName("main")[0].children.length - 1; i++) {
+	/*for (var i = 0; i < document.getElementsByTagName("main")[0].children.length - 1; i++) {
 		var rect = document.getElementsByTagName("main")[0].children[i].getBoundingClientRect();
 		if (window.innerHeight / 2 > rect.top && window.innerHeight / 2 < rect.bottom) {
 			document.getElementById("navList").children[i].children[0].classList.add("currentPage");
 		} else {
 			document.getElementById("navList").children[i].children[0].classList.remove("currentPage");
 		}
+	}*/
+	for (var i = 0; i < document.getElementById("navList").children.length - 1; i++) {
+		var rect = document.getElementsByTagName("main")[0].children[i].getBoundingClientRect();
+		if (window.innerHeight / 2 > rect.top) {
+			document.getElementById("navList").children[i].children[0].classList.add("currentPage");
+			for (var j = 0; j < i; j++) {
+				document.getElementById("navList").children[j].children[0].classList.remove("currentPage");
+			}
+		} else {
+			document.getElementById("navList").children[i].children[0].classList.remove("currentPage");
+		}
 	}
 	var rect = document.getElementsByTagName("footer")[0].getBoundingClientRect();
 	if (window.scrollY + window.innerHeight + 50 > document.body.scrollHeight || (window.innerHeight / 2 > rect.top && window.innerHeight / 2 < rect.bottom)) {
-		for (var i = 0; i < document.getElementsByTagName("main")[0].children.length - 1; i++) {
+		/*for (var i = 0; i < document.getElementsByTagName("main")[0].children.length - 1; i++) {
+			document.getElementById("navList").children[i].children[0].classList.remove("currentPage");
+		}*/
+		for (var i = 0; i < document.getElementById("navList").children.length - 1; i++) {
 			document.getElementById("navList").children[i].children[0].classList.remove("currentPage");
 		}
 		document.getElementById("navList").children[document.getElementById("navList").children.length - 1].children[0].classList.add("currentPage");
-		document.getElementById("arrow").classList.add("fa-arrow-up");
-		document.getElementById("arrow").classList.remove("fa-arrow-down");
+		//document.getElementById("arrow").classList.add("fa-arrow-up");
+		//document.getElementById("arrow").classList.remove("fa-arrow-down");
 	} else {
 		document.getElementById("navList").children[document.getElementById("navList").children.length - 1].children[0].classList.remove("currentPage");
-		document.getElementById("arrow").classList.add("fa-arrow-down");
-		document.getElementById("arrow").classList.remove("fa-arrow-up");
+		//document.getElementById("arrow").classList.add("fa-arrow-down");
+		//document.getElementById("arrow").classList.remove("fa-arrow-up");
 	}
 }
 window.addEventListener("DOMContentLoaded", function () {
 	handleScroll();
 	document.addEventListener("scroll", handleScroll);
-	document.addEventListener("keydown", function (e) {
+	/*document.addEventListener("keydown", function (e) {
 		e = e || window.event;
 		if (e.key == "ArrowLeft") {
 			moveCarousel(-1);
@@ -80,7 +94,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	});
 	timer = carouselTime;
 	carouselTimer();
-	carouselChange();
+	carouselChange();*/
 	for (var i = 0; i < document.getElementById("navList").children.length; i++) {
 		document.getElementById("navList").children[i].addEventListener("click", function () {
 			if (window.innerWidth <= 700) {
@@ -98,11 +112,11 @@ window.addEventListener("DOMContentLoaded", function () {
 			hamburgerMenu(false);
 		}
 		handleScroll();
-		bgImageSize();
+		//bgImageSize();
 	});
-	bgImageSize();
+	//bgImageSize();
 });
-var timer = 0;
+/*var timer = 0;
 function moveCarousel(dir) {
 	timer = carouselTime;
 	carouselPage += dir + document.getElementById("carouselC").children.length;
@@ -115,7 +129,7 @@ function jumpCarousel(pos) {
 	carouselPage += dir + document.getElementById("carouselC").children.length;
 	carouselPage %= document.getElementById("carouselC").children.length;
 	carouselChange();
-}
+}*/
 function hamburgerMenu(checked) {
 	if (checked) {
 		document.getElementsByTagName("header")[0].style.transform = "translateX(0)";

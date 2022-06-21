@@ -28,11 +28,11 @@
 				<a href="#about">
 					<li>About Me</li>
 				</a>
-				<a href="#courses">
-					<li>Courses</li>
+				<a href="#mathematics">
+					<li>Subjects</li>
 				</a>
-				<a href="#schedule">
-					<li>Schedule</li>
+				<a href="#moreinfo">
+					<li>More Information</li>
 				</a>
 				<a href="#contact">
 					<li>Contact</li>
@@ -49,11 +49,18 @@
 			</div>
 			<div class="desc">
 				<h1 class="heading" id="helloH">Hello, I'm Dean</h1>
-				<p>I'm a student who will be attending Stanford University in the fall after having graduated from the Westminster Schools, and I hope to share my love of STEM subjects to younger kids and help prepare them for their upcoming studies during the school year.
+				<p>I'm a student who will be attending Stanford University in the fall after having graduated from the Westminster Schools. Through summer tutoring, I hope to share my love of STEM subjects to younger kids and help prepare them for their upcoming studies during the school year.
 				</p>
+				<p>My coursework includes:
+				</p>
+				<ul>
+					<li><b>Mathematics</b> - Algebra I and II, Geometry, Precalculus, AP Calculus BC, Multivariable Calculus, Linear Algebra, Differential Equations, Number Theory, Applied Combinatorics, Analysis I</li>
+					<li><b>Computer Science</b> - Web development (HTML/CSS/JavaScript), Python, Java, C#</li>
+					<li><b>Science</b> - AP Chemistry, AP Biology, AP Physics Mechanics, AP Physics Electricity & Magnetism</li>
+				</ul>
 			</div>
 		</section>
-		<div id="courses">
+		<!--<div id="courses">
 			<aside id="carouselL" onclick="moveCarousel(-1);"><i class="fa-solid fa-angle-left"></i></aside>
 			<div id="carouselM" onclick="moveCarousel(1);">
 				<div id="carouselBG">
@@ -113,19 +120,74 @@
 				</div>
 			</div>
 			<aside id="carouselR" onclick="moveCarousel(1);"><i class="fa-solid fa-angle-right"></i></aside>
-		</div>
-		<section id="schedule" class="double">
-			<iframe
-				src="https://calendly.com/deancureton?embed_domain=&amp;embed_type=Inline&amp;background_color=262522&amp;text_color=f4f4f4&amp;primary_color=1363df"
-				frameborder="0" id="calendlyFrame"></iframe>
+		</div>-->
+		<div id="subjects">
+		<section id="mathematics" class="double">
 			<div class="desc">
-				<h1 class="heading" id="scheduleH">Schedule</h1>
-				<p>I use Calendly to schedule tutoring appointments. Please use the attached window to book a session with me. Alternatively, click <a href="https://calendly.com/deancureton" target="_blank">here</a> or send me an email in the contact form below.</p>
+				<h1 class="heading" id="mathH">Mathematics</h1>
+				<p>One thing I've always disliked about middle and high school math curriculums is their strict adherence to formulaic problem solving methods. During my studies of mathematics, I was able to apply intuition and clever problem solving tricks that aren't taught in schools to complete work faster and keep math fun. Through tutoring, I hope to introduce younger kids to these methods that save precious time and keep math from being taught as a dry, formulaic subject.</p>
+			</div>
+			<div class="desc">
+				<h2>Potential Topics:</h2>
+				<ul>
+					<li>Pre-Algebra</li>
+					<li>Algebra I</li>
+					<li>Geometry</li>
+					<li>Algebra II</li>
+					<li>Pre-Calculus</li>
+					<li>Differential Calculus</li>
+					<li>Integral Calculus</li>
+				</ul>
 			</div>
 		</section>
-		<button id="arrowButton" onclick="arrowButtonClick();">
+		<section id="compsci" class="double">
+			<div class="desc">
+				<h1 class="heading" id="compsciH">Computer Programming</h1>
+				<p>My love for computer science grew from an all too common childhood love of video games. Driven by a curiosity of how they were made, I began programming incredibly simple games, and the satisfaction of bringing my own video game ideas to fruition fueled my passion even more. After having studied computer science for about ten years, I would love to be able to introduce curious young children to the world of programming and game development so that they, too, can find their own passion for invaluable computer science skills that are driving the future.
+				</p>
+			</div>
+			<div class="desc">
+				<h2>Potential Topics:</h2>
+				<ul>
+					<li>Intro to Scratch</li>
+					<li>Web Design (HTML/CSS/JS)</li>
+					<li>Java Game Development</li>
+					<li>Intro to Python</li>
+				</ul>
+			</div>
+		</section>
+		<section id="science" class="double">
+			<div class="desc">
+				<h1 class="heading" id="scienceH">Science</h1>
+				<p>All too often, students try to brute force their way through science classes by memorizing conceptual information without truly grasping the basics that make studying science possible. Whether it's in physics, chemistry, or biology, truly understanding the fundamentals of scientific calculation and experimentation is key to efficient work, and I hope to be able to improve students' abilities in these topics.</p>
+			</div>
+			<div class="desc">
+				<h2>Potential Topics:</h2>
+				<ul>
+					<li>AP Chemistry</li>
+					<li>AP Biology</li>
+					<li>AP Physics Mechanics and E&M</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+		<section id="moreinfo" class="double">
+			<div class="desc">
+				<h1 class="heading" id="scheduleH">Schedule</h1>
+				<p>I use Calendly to schedule tutoring appointments. Please click <a href="https://calendly.com/deancureton" target="_blank">here</a> to book a session or send me an email using the contact form at the bottom of the page.</p>
+			</div>
+			<div class="desc" id="approachDesc">
+				<h1 class="heading">Approach</h1>
+				<p>Through tutoring sessions, my goal is for students to improve their work efficiency and develop a passion for the subjects they study, helping make STEM more fun and easy. To do this, I hope to introduce students to tips and tricks that help them develop a strong problem solving intuition, something I believe that schools fail to teach. With these skills, STEM subjects become far less tedious and more natural to learn.</p>
+			</div>
+			<div class="desc">
+				<h1 class="heading">Rate</h1>
+				<p>A 30-minute beginning consultation to set goals, discuss topics, and lay out a syllabus is free. Each 1-hour tutoring session afterwards is $50 per hour.</p>
+			</div>
+		</section>
+		<!--<button id="arrowButton" onclick="arrowButtonClick();">
 			<i id="arrow" class="fa-solid"></i>
-		</button>
+		</button>-->
 	</main>
 	<footer>
 		<section id="contact">

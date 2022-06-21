@@ -235,7 +235,14 @@ section {
 	height: auto;
 }
 
-main>section, main>div {
+/*main>section, main>div {
+	min-height: calc(100vh - (var(--main-spacing) * 3));
+	transition: filter 0.5s;
+	padding-top: var(--main-spacing);
+	padding-bottom: var(--main-spacing);
+	transition: padding-top 0.3s;
+}*/
+main section {
 	min-height: calc(100vh - (var(--main-spacing) * 3));
 	transition: filter 0.5s;
 	padding-top: var(--main-spacing);
@@ -341,7 +348,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 }
 
 .desc {
@@ -583,6 +590,45 @@ button.fa:active {
 	}
 }
 
+#mathematics::before, #compsci::before, #science::before {
+	content: "";
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+}
+
+#mathematics {
+	background-image: url(backgrounds/bg1.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#compsci {
+	background-image: url(backgrounds/bg2.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#science {
+	background-image: url(backgrounds/bg3.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*#approachDesc {
+	text-align: right;
+}*/
+
 @media only screen and (max-width: 1000px) {
 	#carouselL {
 		left: -100px;
@@ -787,9 +833,9 @@ button.fa:active {
 	z-index: 1;
 }
 
-#schedule {
+/*#schedule {
 	flex-wrap: wrap-reverse;
-}
+}*/
 
 @media screen and (prefers-reduced-motion: reduce) {
 	* {
