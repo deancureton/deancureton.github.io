@@ -414,7 +414,9 @@ button.fa:active {
 
 #socials,
 #email {
-	width: 250px;
+	/*width: 250px;*/
+	width: 400px;
+	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
